@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // Set base to relative so the site works when served from Vercel, GitHub Pages, or a subpath
+      base: './',
       server: {
         port: 3000,
         host: '0.0.0.0',
